@@ -36,7 +36,7 @@ public class ClienteTest {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void prospecto() {
 		String codigo="0";
 		String nombre="jose";
@@ -58,7 +58,7 @@ public class ClienteTest {
 		assertTrue(objCliente.getCelular().equals(celular));
 	}
 	
-	@Test
+	//@Test
 	public void grabarprospecto() {
 		String codigo="0";
 		String nombre="eduardo";
@@ -87,7 +87,7 @@ public class ClienteTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void modificarprospecto() {
 		String codigo="3";
 		String nombre="jose3";
@@ -121,7 +121,7 @@ public class ClienteTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void deleteprospecto() {
 		String codigo="4";
 				
@@ -140,7 +140,7 @@ public class ClienteTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void listarprospectos() {
 				
 		AdmCliente objAdmCliente= new AdmCliente();
@@ -155,7 +155,7 @@ public class ClienteTest {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void changeProspectoToCliente()
 	{
 		String codigo = "5";
@@ -172,7 +172,7 @@ public class ClienteTest {
 	}
 	
 	
-	@Test
+	//@Test
 	public void listClientes()
 	{
 		AdmCliente objAdmCliente= new AdmCliente();
