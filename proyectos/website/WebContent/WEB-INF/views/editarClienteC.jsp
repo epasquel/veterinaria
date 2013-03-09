@@ -132,7 +132,7 @@ function validar(){
 			<tr>
 				<td>Foto:</td>
 				<td>
-				<img alt="" width="80px" height="80px" src="D:\\Eclipse\\HelloWorldSpring3\\WebContent\\Fotos\\'${requestScope.model.imagen}" />
+				<img alt="" width="80px" height="80px" src="/Veterinaria/Fotos/${requestScope.model.imagen}" />
 				<input type="button" name="btnFoto" id="btnFoto" onclick="AbrirUpload();"></td>
 			</tr>
 			<tr>
