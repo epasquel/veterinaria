@@ -5,13 +5,20 @@
     import="org.apache.commons.fileupload.*"
     import="org.apache.commons.fileupload.servlet.*"
     import="org.apache.commons.fileupload.disk.*"
-    import="java.io.*" %>
+    import="java.io.*"
+    import="net.vetfurious.util.FotoUploadUtil"
+     %>
 <%
 
 
-File destino = new File(request.getContextPath()+"\\Fotos\\");
+File destino = new File(request.getContextPath()+ File.separator + "Fotos" + File.separator);
+
+System.out.println("request.getContextPath() => " + request.getContextPath());
 System.out.println(destino);
 ServletRequestContext src = new ServletRequestContext(request);
+
+String folderFotos = request.getRealPath("Fotos");
+System.out.println("request.getRealPath() => " + folderFotos );
 if(ServletFileUpload.isMultipartContent(src)){
 	DiskFileItemFactory factory = new DiskFileItemFactory((1024*1024),destino);
 	ServletFileUpload upload = new  ServletFileUpload(factory);
@@ -22,6 +29,7 @@ if(ServletFileUpload.isMultipartContent(src)){
 
 	String Codigo="";
 	
+	FotoUploadUtil fotoUploadUtil = new FotoUploadUtil(); 
 	while(it.hasNext()){
 		FileItem item=(FileItem)it.next();
 		if(item.getFieldName().equals("hiddencodigo")) {
@@ -33,10 +41,10 @@ if(ServletFileUpload.isMultipartContent(src)){
 		}
 		else
 		{
-			file=new File(item.getName());
-			item.write(new File(destino,"'" + file.getName()));
+			File fileNuevo = fotoUploadUtil.subirArchivo(item, folderFotos);
+			
 			ClienteDAO objClienteDAO=new ClienteDAO();
-			objClienteDAO.UpdateFoto(Codigo,file.getName());
+			objClienteDAO.UpdateFoto(Codigo,fileNuevo.getName());
 			//out.println("Fichero subido");
 			%><Br><table border="2"><tr><td><b>Usted ha subido satisfactoriamente el archivo de nombre:</b>
 			<% out.print("codigo " + Codigo); %></td></tr></table> <% 
