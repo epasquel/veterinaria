@@ -5,6 +5,7 @@ import net.vetfurious.excepcion.DAOExcepcion;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.tempuri.*;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -57,7 +58,14 @@ public class ClienteController {
 	public ModelAndView registroCliente(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		System.out.println("registrarProspecto");
+		try{
+			System.out.println(new ReniecLocator().getReniecSoap().GETPERSONA("41203195"));
+		}catch(Exception e){
+			System.out.println("Servicio no disponible");
+		}
 		
+		
+			    
 		Cliente oModelCliente = new Cliente();
 		oModelCliente.setCodigo(request.getParameter("id"));
 		oModelCliente.setNombre(request.getParameter("txtNombre"));
