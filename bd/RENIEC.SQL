@@ -75,7 +75,7 @@ BEGIN
   END  
  ELSE  
   BEGIN  
-   SELECT '0;;;;;'  
+   SELECT '0; ; ; ; ; '  
   END  
   
 END
