@@ -22,7 +22,7 @@ public class ReniecLocator extends org.apache.axis.client.Service implements org
     }
 
     // Use to get a proxy class for ReniecSoap
-    private java.lang.String ReniecSoap_address = "http://localhost:4633/Reniec.asmx";
+    private java.lang.String ReniecSoap_address = "http://localhost:13231/WSReniec/Reniec.asmx";
 
     public java.lang.String getReniecSoapAddress() {
         return ReniecSoap_address;

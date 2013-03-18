@@ -25,29 +25,59 @@
 
 <link href="css/style.css" rel="stylesheet" />
 <title>Veterinaria - Clientes</title>
-</head>
-<body>
 
-     <div class="" >
+<SCRIPT type="text/javascript">
+
+function verificarRegistroCliente(){
+	
+	document.getElementById("frmIngreso").action="verificarRegistroCliente.jsp";
+	document.getElementById("frmIngreso").method = "get";
+	document.getElementById("frmIngreso").submit();
+	
+}
+
+function window_onload(){
+	
+	if(document.getElementById("_error").value == "0"){
+		alert("EL DNI no existe!!!");
+	}
+	
+}
+
+</SCRIPT>
+
+</head>
+<body onload="window_onload()">
+
+     
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="">
-			<form name="input" action="registrarCliente.html" method="post">
+			<form id="frmIngreso" name="input" action="registrarCliente.html" method="post">
 			
 			<div class="control-group">
 	          <!-- Text input-->
 	          <label class="control-label" for="input01" style="float:left;width:100px">Id Cliente</label>
 	          <div class="controls">
-	            <input type="text" class="input-xlarge" name="id">
+	            <input type="text" class="input-xlarge" value="${requestScope.model.codigo}" name="id">
 	          </div>
     		</div>
-    
+    		
+    		<div class="control-group">
+	          <!-- Text input-->
+	          <label class="control-label" for="input01" style="float:left;width:100px">DNI</label>	          
+	          <div class="controls">
+	            <input type="text" class="input-xlarge" value="${requestScope.model.dni}" id="txtDNI" name = "txtDNI">
+	            <input type="button" class="btn btn-success" onclick="verificarRegistroCliente();">
+	            
+	          </div>
+    		</div>
     
 		    <div class="control-group">
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Nombre</label>
 		          <div class="controls">
-		            <input type="text"  class="input-xlarge" name = "txtNombre">
+		            <input type="text" class="input-xlarge" value="${requestScope.model.nombre}" name = "txtNombre">
 		          </div>
 		    </div>
 		    
@@ -55,7 +85,7 @@
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Ap. Paterno</label>
 		          <div class="controls">
-		            <input type="text"  class="input-xlarge"  name ="txtApellidoPaterno">
+		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidopaterno}" name ="txtApellidoPaterno">
 		          </div>
 		    </div>
 		    
@@ -63,7 +93,7 @@
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Ap. Materno</label>
 		          <div class="controls">
-		            <input type="text"  class="input-xlarge" name ="txtApellidoMaterno">
+		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidomaterno}" name ="txtApellidoMaterno">
 		          </div>
 		    </div>
 		    
@@ -103,15 +133,13 @@
 				  <!-- Button -->
 		          <div class="controls">
 		            <input type="submit" value="Ingresar" class="btn btn-success" >
+		            <input type="hidden" id="_error" value="${requestScope.model.error}" />
 		          </div>
         	</div>
 			
 		
 	</form>
       </div>
-
-    </div> 
-
 
 
 </body>

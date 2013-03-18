@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Data
+Imports WSReniec
 
 Public Class ClsData
 

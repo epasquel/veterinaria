@@ -6,5 +6,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="D:/UPC/2013_00/Modulo II/DSD/My Project/veterinaria/proyectos/website/WebContent/WEB-INF/lib/axis-1.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

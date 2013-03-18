@@ -104,6 +104,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h2>Prospectos</h2>
+              
 		<form action="verRegistroCliente.jsp" method="get">
 			<a class="btn btn-primary btn-larg" data-toggle="modal" href="#myModal" id="btnNew" flag="Prospecto">Nuevo</a>
 		</form>
