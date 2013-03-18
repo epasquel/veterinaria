@@ -68,7 +68,7 @@ public class ClienteController {
 		oModelCliente.setApellidomaterno(arrayCliente[3]);
 		oModelCliente.setDni(arrayCliente[4]);
 		oModelCliente.setCodigo(arrayCliente[5]);
-		oModelCliente.setError(arrayCliente[0]);
+		oModelCliente.setError(arrayCliente[0].toString());
 		System.out.println(clienteReniec);
 		return new ModelAndView("nuevoCliente", "model", oModelCliente);
 		
