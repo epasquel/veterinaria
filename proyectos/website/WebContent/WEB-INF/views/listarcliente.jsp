@@ -55,7 +55,7 @@
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li class="divider"></li>
-              <li><a href="#">Sign Out</a></li>
+              <li><a href="Login.jsp">Sign Out</a></li>
             </ul>
           </div>
           
@@ -104,6 +104,7 @@
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h2>Prospectos</h2>
+              
 		<form action="verRegistroCliente.jsp" method="get">
 			<a class="btn btn-primary btn-larg" data-toggle="modal" href="#myModal" id="btnNew" flag="Prospecto">Nuevo</a>
 		</form>

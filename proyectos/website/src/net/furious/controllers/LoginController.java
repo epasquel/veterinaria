@@ -46,6 +46,12 @@ public class LoginController {
 
 	}
 	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public ModelAndView inicio(HttpServletRequest request,HttpServletResponse response)throws Exception {
+		
+		return new ModelAndView("index");
+
+	}
 	
 	
 	@RequestMapping(value = "/editarLogin", method = RequestMethod.POST)

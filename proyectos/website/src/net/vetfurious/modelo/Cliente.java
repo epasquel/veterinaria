@@ -11,7 +11,8 @@ public class Cliente {
 	String imagen; 
 	String telefono; 
 	String celular;
-	
+	String dni;
+	String error;
 	
 	public Cliente(String codigo,String nombre, String apellidopaterno,String apellidomaterno,String email, String direccion,
 			String imagen, String telefono, String celular) {
@@ -101,4 +102,22 @@ public class Cliente {
 	public void setCelular(String celular) {
 		this.celular = celular;
 	}
+	
+	public String getDni() {
+		return dni;
+	}
+	
+	public void setDni(String dni){
+		this.dni = dni;		
+	}
+	
+	public String getError(){
+		return error;
+	}
+	
+	public void setError(String error) {
+		this.error = error;
+	}
+	
+	
 }

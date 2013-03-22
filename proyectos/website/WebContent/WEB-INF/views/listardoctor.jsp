@@ -45,7 +45,7 @@
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li class="divider"></li>
-              <li><a href="#">Sign Out</a></li>
+              <li><a href="Login.jsp">Sign Out</a></li>
             </ul>
           </div>
           
