@@ -28,11 +28,10 @@
 
 <SCRIPT type="text/javascript">
 
-function verificarRegistroCliente(){
-	
-	document.getElementById("frmIngreso").action="verificarRegistroCliente.jsp";
-	document.getElementById("frmIngreso").method = "get";
-	document.getElementById("frmIngreso").submit();
+function verificarRegistroCliente(){	
+	document.getElementById("frmValidar").src = "consultarServicioReniec?txtDNI=" + document.getElementById("txtDNI").value;
+	document.getElementById("frmValidar").reload();
+	//document.getElementById("frmValidar").contentWindow.navigate("consultarServicioReniec");	
 	
 }
 
@@ -59,7 +58,7 @@ function window_onload(){
 	          <!-- Text input-->
 	          <label class="control-label" for="input01" style="float:left;width:100px">Id Cliente</label>
 	          <div class="controls">
-	            <input type="text" class="input-xlarge" value="${requestScope.model.codigo}" name="id">
+	            <input type="text" class="input-xlarge" value="${requestScope.model.codigo}" name="id" id="id">
 	          </div>
     		</div>
     		
@@ -67,8 +66,9 @@ function window_onload(){
 	          <!-- Text input-->
 	          <label class="control-label" for="input01" style="float:left;width:100px">DNI</label>	          
 	          <div class="controls">
-	            <input type="text" class="input-xlarge" value="${requestScope.model.dni}" id="txtDNI" name = "txtDNI">
-	            <input type="button" class="btn btn-success" onclick="verificarRegistroCliente();">
+	            <input type="text" class="input-xlarge" value="${requestScope.model.dni}" id="txtDNI" name="txtDNI">
+	            
+	            <input type="button" class="btn btn-success" value="..." onclick="verificarRegistroCliente();">
 	            
 	          </div>
     		</div>
@@ -77,7 +77,7 @@ function window_onload(){
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Nombre</label>
 		          <div class="controls">
-		            <input type="text" class="input-xlarge" value="${requestScope.model.nombre}" name = "txtNombre">
+		            <input type="text" class="input-xlarge" value="${requestScope.model.nombre}" name="txtNombre" id="txtNombre">
 		          </div>
 		    </div>
 		    
@@ -85,7 +85,7 @@ function window_onload(){
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Ap. Paterno</label>
 		          <div class="controls">
-		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidopaterno}" name ="txtApellidoPaterno">
+		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidopaterno}" name="txtApellidoPaterno" id="txtApellidoPaterno">
 		          </div>
 		    </div>
 		    
@@ -93,7 +93,7 @@ function window_onload(){
 		          <!-- Text input-->
 		          <label class="control-label" for="input01" style="float:left;width:100px">Ap. Materno</label>
 		          <div class="controls">
-		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidomaterno}" name ="txtApellidoMaterno">
+		            <input type="text"  class="input-xlarge" value="${requestScope.model.apellidomaterno}" name="txtApellidoMaterno" id="txtApellidoMaterno">
 		          </div>
 		    </div>
 		    
@@ -140,7 +140,7 @@ function window_onload(){
 		
 	</form>
       </div>
-
-
+	<iframe id="frmValidar" style="display: none;">	
+	</iframe>
 </body>
 </html>

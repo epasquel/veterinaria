@@ -53,11 +53,12 @@ public class ClienteController {
 
 		return new ModelAndView("nuevoCliente");
 	}
-	
-	@RequestMapping(value = "/verificarRegistroCliente", method = RequestMethod.GET)
-	public ModelAndView verificar(HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
 
+
+	@RequestMapping(value="/consultarServicioReniec", method = RequestMethod.GET)
+	public ModelAndView verificarRegistroCli(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+		System.out.println(request.getParameter("txtDNI"));
 		String clienteReniec ="";
 		ReniecLocator rl = new ReniecLocator();
 		clienteReniec = rl.getReniecSoap().GETPERSONA(request.getParameter("txtDNI"));
@@ -69,12 +70,11 @@ public class ClienteController {
 		oModelCliente.setDni(arrayCliente[4]);
 		oModelCliente.setCodigo(arrayCliente[5]);
 		oModelCliente.setError(arrayCliente[0].toString());
-		System.out.println(clienteReniec);
-		return new ModelAndView("nuevoCliente", "model", oModelCliente);
+		ModelAndView mav = new ModelAndView("verificarRegistroCliente", "model", oModelCliente);        
 		
-		
-	}
-	
+        return mav;
+
+    }
 	
 	@RequestMapping(value = "/registrarCliente", method = RequestMethod.POST)
 	public ModelAndView registroCliente(HttpServletRequest request,

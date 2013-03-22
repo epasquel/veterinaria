@@ -55,7 +55,7 @@
             <ul class="dropdown-menu">
               <li><a href="#">Profile</a></li>
               <li class="divider"></li>
-              <li><a href="#">Sign Out</a></li>
+              <li><a href="forms/Login.jsp">Sign Out</a></li>
             </ul>
           </div>
           
@@ -138,10 +138,9 @@
     <script language="javascript">
 
     $(function(){
-        window.location = "forms/Login";
+    	window.location = "forms/Login";
         $("#slides").slides({
-        	play: 5000,			
-
+        	play: 5000,
         });
     });
     
