@@ -3,3 +3,6 @@ proyectos/website/build
 proyectos/website/build/*
 .svn
 
+/proyectos/rest/nbproject/private/
+/proyectos/rest/build/
+/proyectos/rest/dist/
