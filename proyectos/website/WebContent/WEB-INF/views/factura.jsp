@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Facturación</title>
+<link href="/Veterinaria/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Veterinaria/css/DT_bootstrap.css" rel="stylesheet" />    
+    <link href="/Veterinaria/css/bootstrap-responsive.css" rel="stylesheet" />
+	
+<script language="javascript" type="text/javascript" src="/Veterinaria/js/jquery-1.7.2.min.js" ></script>
 <script language="javascript" type="text/javascript" >
 	function buscarcliente(){
 		window.open("buscacliente","","width=600,height=600");
@@ -91,6 +96,8 @@
 		 return true;
 	}
 </script>
+
+<script language="javascript" type="text/javascript" src="/Veterinaria/js/facturacion.js" ></script>
 <style type="text/css">
 #gradient-style
 {
@@ -140,7 +147,7 @@
 				<th colspan=4>Registro de Factura</th>
 				</tr>
 				<tr>
-				<td colspan=4><input type="submit" value="Grabar" onclick="return grabar();">
+					<td colspan=4><input type="submit" value="Grabar" onclick="return grabar();">
 				<input type="hidden" id="Hiddenaccion" name="Hiddenaccion" value="<%=request.getAttribute("accion")%>"></td>
 				</tr>
 				<tr>
@@ -157,7 +164,7 @@
 				</tr>
 				<tr>
 					<td>RUC:</td>
-					<td><input type="text" id="txtruc" name="txtruc" value="${requestScope.model.ruc}" maxlength="11" onkeypress="javascript:return solonumbers(event);"></td>
+					<td><input type="text" id="txtruc" name="txtruc" value="${requestScope.model.ruc}" maxlength="11" onkeypress="javascript:return solonumbers(event);"> <a href="#" id="hlBuscarClientePorRuc">Buscar</</a></td>
 					<td></td>
 					<td></td>
 				</tr>
@@ -221,5 +228,6 @@
 			</table>
 		</div>
 	</form>
+	
 </body>
 </html>
