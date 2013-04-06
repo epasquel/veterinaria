@@ -8,14 +8,15 @@
 	<name>Veterinaria</name>
 	<properties>
 		<spring.version>3.0.5.RELEASE</spring.version>
+		<jersey.version>1.0.3</jersey.version>
 	</properties>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>test</testSourceDirectory>
-		  
-	
+
+
 		<pluginManagement>
-			
+
 			<plugins>
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
@@ -26,11 +27,12 @@
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat7-maven-plugin</artifactId>
 					<version>2.2-SNAPSHOT</version>
-<configuration>	<url>http://localhost:8082/manager/text</url>
-					<username>tomcat</username>
-					<password>s3cret</password>
+					<configuration>
+						<url>http://localhost:8082/manager/text</url>
+						<username>tomcat</username>
+						<password>s3cret</password>
 					</configuration>
-				
+
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -51,14 +53,14 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-				<plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>                
-                <configuration>
-                  <server>TomcatServer</server>
-                  <url>http://localhost:8082/manager/html</url>
-                </configuration>
-            </plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<configuration>
+					<server>TomcatServer</server>
+					<url>http://localhost:8082/manager/html</url>
+				</configuration>
+			</plugin>
 		</plugins>
 
 	</build>
@@ -131,8 +133,22 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey.contribs</groupId>
+			<artifactId>jersey-spring</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
 
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
 
 
 	</dependencies>
