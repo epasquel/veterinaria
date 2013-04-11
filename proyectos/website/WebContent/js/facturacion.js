@@ -1,3 +1,4 @@
+console.log("prueba");
 $(document).ready(function() {
   $("a#hlBuscarClientePorRuc").on('click', function(e){
 	e.preventDefault();
@@ -5,12 +6,11 @@ $(document).ready(function() {
 	
 	$.ajax({
 			type: "GET",
-			url: "/Veterinaria/sunat/ruc/" + ruc,			
-			dataType: "jsonp"
-		}).done(function( msg ) {
-		alert( "Data Saved: " + msg );
-		console.log(msg);
-	});
+			url: "http://localhost:9080/rest/webresources/rucrest/get/" + ruc,
+			success: function(data) {
+				alert(data);
+			  }
+		});
 	
   });
 });

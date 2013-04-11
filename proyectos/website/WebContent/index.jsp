@@ -58,7 +58,7 @@
               <li><a href="forms/Login.jsp">Sign Out</a></li>
             </ul>
           </div>
-          
+      
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><a href="#">Inicio</a></li>

@@ -25,7 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 
 public class RucController {
-	@Autowired
+
 	private IRucRest rucRest;
 	
 	@RequestMapping(value = "/Ruc", method = RequestMethod.GET)

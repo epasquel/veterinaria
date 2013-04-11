@@ -140,6 +140,7 @@
 </style>
 </head>
 <body>
+	<div class="center_content">
 	<form action="recargafactura" method="post">
 		<div>
 			<table>
@@ -228,6 +229,6 @@
 			</table>
 		</div>
 	</form>
-	
+	</div>
 </body>
 </html>
