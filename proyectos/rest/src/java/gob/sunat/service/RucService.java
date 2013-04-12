@@ -13,6 +13,11 @@ public class RucService {
         Ruc rucObj = null;
         RucModel model = new RucModel();
         rucObj = model.getRucByRuc(ruc);
+        if(rucObj == null)
+        {
+            rucObj = new Ruc("","","");
+            rucObj.setIdRuc(0);
+        }
         return rucObj;
     }
     

@@ -37,7 +37,7 @@ public class Ruc  implements MessageBodyWriter,java.io.Serializable {
     public Ruc(String ruc, String nombre, String dni) {
        this.ruc = ruc;
        this.nombre = nombre;
-       this.dni = dni;
+       this.dni = dni;       
     }
    
    private static final long serialVersionUID = 1L;

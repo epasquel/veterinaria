@@ -106,9 +106,10 @@
 		 return true;
 	}
 </script>
-
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/facturacion.js"></script>
 </head>
-<body onload="window_onload()">
+<body>
  <div class="container" style="width: 1076px;">
 <div class="hero-unit">
 	<form action="recargafactura" method="post">
@@ -204,6 +205,7 @@
 		          <label class="control-label" for="input01" style="float:left;width:100px">RUC:</label>
 		          <div class="controls">
 		            <input type="text" id="txtruc" name="txtruc" value="${requestScope.model.ruc}" maxlength="11" onkeypress="javascript:return solonumbers(event);">
+		            <a href="#" id="hlRucRest" >Comprobar Datos</a>
 		          </div>
 		       </div>
 		       <div class="control-group">

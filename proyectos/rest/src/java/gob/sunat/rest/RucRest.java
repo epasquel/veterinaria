@@ -18,12 +18,31 @@ public class RucRest {
     @GET
     @Path("get/{ruc}")
     public Ruc getRuc(@PathParam("ruc") String ruc){
-        Ruc rucObj = null;
+        Ruc rucObj = new Ruc("","","");
         RucService rucService = new RucService();
         log.info("getRuc: " + ruc);
         rucObj = rucService.getRucByRuc(ruc);
         
         return rucObj;
+    }
+    
+    @GET
+    @Path("get2/{ruc}")
+    public String getRuc2(@PathParam("ruc") String ruc){
+        Ruc rucObj = new Ruc("","","");
+        
+        RucService rucService = new RucService();
+        log.info("getRuc: " + ruc);
+        rucObj = rucService.getRucByRuc(ruc);
+        String rspsta = "";
+        rspsta = "myCallBack({"
+                + "\"idRuc\":\"" + rucObj.getIdRuc()+ "\", "
+                + "\"ruc\":\"" + rucObj.getRuc() + "\", "
+                + "\"nombre\":\"" + rucObj.getNombre()+ "\", "
+                + "\"dni\":\"" + rucObj.getDni()+ "\" "                
+                + "})";
+        
+        return rspsta;
     }
     
     @GET
