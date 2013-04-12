@@ -25,7 +25,7 @@ public class RucService {
     public Ruc addRuc(String ruc, String nombre, String dni) {
         Ruc rucObj = new Ruc();
         rucObj.setRuc(ruc);
-        rucObj.setNombre(nombre);
+        rucObj.setNombre(nombre);        
         rucObj.setDni(dni);
         
         RucModel model = new RucModel();
@@ -39,7 +39,7 @@ public class RucService {
          System.out.println(" rucObj id 1 edit in service => " + idRucInt);
         RucModel model = new RucModel();
         Ruc rucObj = model.getRucByIdRuc(idRucInt);         
-        rucObj.setRuc(ruc);
+        //rucObj.setRuc(ruc);
         rucObj.setNombre(nombre);
         rucObj.setDni(dni);
         System.out.println(" rucObj id 2 edit in service => " + rucObj);

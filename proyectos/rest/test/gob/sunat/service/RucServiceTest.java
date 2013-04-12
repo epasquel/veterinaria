@@ -99,7 +99,7 @@ public class RucServiceTest {
         
         Ruc result = instance.editRuc(idRuc, ruc, nombre, dni);
          System.out.println("editRuc => " + ruc + " di ant"+ idRuc+    " con id nueo" + result.getIdRuc() );
-        assertEquals(ruc, result.getRuc());
+        assertEquals(nombre, result.getNombre());
         
     }
 

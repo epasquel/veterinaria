@@ -19,7 +19,8 @@ public class RucModel {
     Session session = null;
 
     public RucModel() {
-        this.session = HibernateUtil.getSessionFactory().getCurrentSession();
+        this.session = HibernateUtil.getSessionFactory().openSession();
+        
     }
 
     public gob.sunat.pojo.Ruc getRucByRuc(String ruc) {
@@ -90,4 +91,11 @@ public class RucModel {
 
         return borrado;
     }
+    
+    protected void checkSession(){
+        if(this.session == null){
+            
+        }
+    }
+            
 }
